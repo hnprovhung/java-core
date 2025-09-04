@@ -3,6 +3,7 @@ package com.hunghv.indentityservice.controller;
 import com.hunghv.indentityservice.dto.request.UserCreationRequest;
 import com.hunghv.indentityservice.dto.request.UserUpdateRequest;
 import com.hunghv.indentityservice.dto.response.ApiResponse;
+import com.hunghv.indentityservice.dto.response.UserResponse;
 import com.hunghv.indentityservice.entity.User;
 import com.hunghv.indentityservice.service.UserService;
 import jakarta.validation.Valid;
@@ -21,8 +22,8 @@ public class UserController {
     UserService userService;
 
     @PostMapping
-    ApiResponse<User> createUser(@RequestBody @Valid UserCreationRequest request) {
-        ApiResponse<User> response = new ApiResponse<>();
+    ApiResponse<UserResponse> createUser(@RequestBody @Valid UserCreationRequest request) {
+        ApiResponse<UserResponse> response = new ApiResponse<>();
         response.setResult(userService.createUser(request));
         return response;
     }

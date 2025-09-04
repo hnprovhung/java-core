@@ -8,8 +8,12 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import java.time.LocalDate;
+import java.util.Set;
 
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 @Getter
 @Setter
 @FieldDefaults(level = AccessLevel.PRIVATE)
@@ -22,4 +26,5 @@ public class User {
     String firstName;
     String lastName;
     LocalDate dateOfBirth;
+    Set<String> roles;
 }
